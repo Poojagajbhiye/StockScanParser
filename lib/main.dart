@@ -1,3 +1,6 @@
+// tests
+// check git repo
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_scan_parser/models/scans_list.dart';

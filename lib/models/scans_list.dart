@@ -5,6 +5,11 @@ import 'package:stock_scan_parser/services/stock_scan_service.dart';
 class ScansList with ChangeNotifier {
   List<Scan> scansList = [];
   bool viewSubCriteria = false;
+  int selectedCriteria = 0;
+  late String? selectedVariableType;
+  late List<dynamic>? selectedVariableValues;
+  late String? selectedVariableParamName;
+  late int? selectedVariableDefaultVal;
 
   Future<dynamic> init() async {
     final dynamic data = await getScansData() as dynamic;
@@ -26,7 +31,19 @@ class ScansList with ChangeNotifier {
   }
 
   void switchList() {
-    viewSubCriteria = true;
+    viewSubCriteria = !viewSubCriteria;
     notifyListeners();
+  }
+
+  void selectVariable(
+    String? type,
+    List<dynamic>? values,
+    String? paramName,
+    int? val,
+  ) {
+    selectedVariableType = type;
+    selectedVariableValues = values;
+    selectedVariableParamName = paramName;
+    selectedVariableDefaultVal = val;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_scan_parser/models/scans_list.dart';
+import 'package:stock_scan_parser/screens/splash_screen.dart';
 import 'package:stock_scan_parser/widgets/scan_tiles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 }
               } else {
-                return const Center(child: CircularProgressIndicator());
+                return const SplashScreen();
               }
             }),
       ),
